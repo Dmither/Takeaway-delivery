@@ -86,6 +86,7 @@
       height: 2px;
       left: 0;
       background-color: #546285;
+      transition: all 0.3s ease 0s;
     }
     &>span{
       top:50%;
@@ -99,10 +100,16 @@
     }
     &_active{
       &>span{
+        transform: translate(-50%, -50%);
+        opacity: 0;
       }
       &::before{
+        top: 50%;
+        transform: translate(0, -50%) rotate(45deg);
       }
       &::after{
+        bottom: 50%;
+        transform: translate(0, 50%) rotate(-45deg);
       }
     }
     @media (min-width: 768px) {
