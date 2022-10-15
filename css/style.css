@@ -11,6 +11,7 @@
 .wrapper {
   color: var(--text);
   font-family: "Inter";
+  position: relative;
 }
 
 .container {
@@ -36,49 +37,60 @@
   }
 }
 
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
 .header__order {
-  font-size: 14px;
-  line-height: 1.43;
-  background-color: var(--color);
+  display: none;
 }
-.header__order p {
-  color: var(--reverse);
-  opacity: 0.8;
-}
-.header__order a {
-  color: var(--reverse);
-  opacity: 1;
+@media (min-width: 768px) {
+  .header__order {
+    display: block;
+    font-size: 14px;
+    line-height: 1.43;
+    background-color: var(--color);
+  }
+  .header__order p {
+    color: var(--reverse);
+    opacity: 0.8;
+  }
+  .header__order a {
+    color: var(--reverse);
+    opacity: 1;
+  }
 }
 .header__order-container {
-  padding: 4px 0;
+  padding: 14px 0;
+  gap: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
-@media (min-width: 480px) {
-  .header__order-container {
-    padding: 14px 0;
-    gap: 20px;
-    flex-direction: row;
-  }
 }
 .header__main {
   padding: 23px 0;
   background-color: var(--reverse);
 }
 .header__main-container {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 30px;
 }
 .header__logo {
+  position: relative;
+  z-index: 3;
   flex: 1 1 auto;
 }
 .header__logo svg path {
   stroke: var(--color);
 }
 .header__burger {
+  position: relative;
+  z-index: 3;
   width: 35px;
   height: 35px;
   position: relative;
@@ -122,6 +134,7 @@
 }
 .header__cart {
   position: relative;
+  z-index: 3;
   width: 55px;
   height: 55px;
   border-radius: 4px;
@@ -129,6 +142,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url(../img/webp/cart-bg.webp);
 }
 .header__cart span {
   position: absolute;
@@ -163,10 +177,35 @@
   color: var(--main);
   opacity: 0.9;
 }
-.menu__link:hover {
+.menu__link:hover, .menu__link:active {
   box-shadow: 0 0 3px -1px var(--color);
 }
 .menu__link_active {
   color: var(--color);
   opacity: 1;
+}
+@media (max-width: 767px) {
+  .menu {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    background-color: #fff;
+    z-index: 2;
+    transition: all 0.3s ease 0s;
+  }
+  .menu .menu__list {
+    padding: 100px 50px 50px;
+    flex-direction: column;
+  }
+  .menu .menu__list .menu__link {
+    font-size: 20px;
+  }
+}
+.menu_active {
+  left: 0;
+}
+
+.intro {
+  background-color: rgba(255, 0, 0, 0.1);
 }/*# sourceMappingURL=style.css.map */

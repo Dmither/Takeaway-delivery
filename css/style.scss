@@ -13,6 +13,7 @@
 .wrapper{
   color: var(--text);
   font-family: 'Inter';
+  position: relative;
 }
 
 .container{
@@ -32,41 +33,48 @@
   }
 }
 .header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 2;
   &__order {
-    font-size: 14px;
-    line-height: 1.43;
-    background-color: var(--color);
-    p{
-      color: var(--reverse);
-      opacity: 0.8;
-    }
-    a{
-      color: var(--reverse);
-      opacity: 1;
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+      font-size: 14px;
+      line-height: 1.43;
+      background-color: var(--color);
+      p{
+        color: var(--reverse);
+        opacity: 0.8;
+      }
+      a{
+        color: var(--reverse);
+        opacity: 1;
+      }
+      
     }
   }
   &__order-container{
-    padding: 4px 0;
+    padding: 14px 0;
+    gap: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    @media (min-width: 480px) {
-      padding: 14px 0;
-      gap: 20px;
-      flex-direction: row;
-    }
   }
   &__main {
     padding: 23px 0;
     background-color: var(--reverse);
   }
   &__main-container{
+    position: relative;
     display: flex;
     align-items: center;
     gap: 30px;
   }
   &__logo {
+    position: relative;
+    z-index: 3;
     flex: 1 1 auto;
     svg{
       path{
@@ -75,6 +83,8 @@
     }
   }
   &__burger {
+    position: relative;
+    z-index: 3;
     width: 35px;
     height: 35px;
     position: relative;
@@ -118,6 +128,7 @@
   }
   &__cart {
     position: relative;
+    z-index: 3;
     width: 55px;
     height: 55px;
     border-radius: 4px;
@@ -125,7 +136,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // background-image: url();
+    background-image: url(../img/webp/cart-bg.webp);
     span{
       position: absolute;
       width: 25px;
@@ -159,7 +170,7 @@
     line-height: 1.33;
     color: var(--main);
     opacity: 0.9;
-    &:hover{
+    &:hover, &:active{
       box-shadow: 0 0 3px -1px var(--color);
     }
     &_active {
@@ -167,8 +178,28 @@
       opacity: 1;
     }
   }
+  @media (max-width: 767px) {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    background-color: #fff;
+    z-index: 2;
+    transition: all 0.3s ease 0s;
+    .menu__list{
+      padding: 100px 50px 50px;
+      flex-direction: column;
+      .menu__link{
+        font-size: 20px;
+      }
+    }
+  }
+  &_active{
+    left: 0;
+  }
 }
 .intro {
+  background-color: rgba($color: red, $alpha: 0.1);
   &__flex {
   }
   &__content {
