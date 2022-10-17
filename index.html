@@ -33,7 +33,7 @@
           <nav class="menu">
             <ul class="menu__list">
               <li><a href="" class="menu__link menu__link_active">Home</a></li>
-              <li><a href="" class="menu__link">Company</a></li>
+              <li><a href="#learn" class="menu__link">Company</a></li>
               <li><a href="" class="menu__link">Order</a></li>
               <li><a href="" class="menu__link">Order</a></li>
               <li><a href="" class="menu__link">FAQ</a></li>
@@ -49,15 +49,77 @@
     </header>
     <main class="main">
       <section class="intro">
-        <div class="container intro__flex">
+        <div class="intro__bg"></div>
+        <div class="container intro__grid">
           <div class="intro__content">
-            <h1 class="title intro__title">Beautiful food & takeaway, <span>delivered</span> to your door.</h1>
+            <h1 class="intro__title">Beautiful food & takeaway, <span>delivered</span> to your door.</h1>
             <p class="text intro__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
-            <a href="" class="btn intro__btn">Place an Order</a>
+            <a href="#" class="btn intro__btn">Place an Order</a>
             <img class="intro__trustpilot" src="img/svg/trustpilot-logo.svg" alt="">
             <p class="intro__rate"><span>4.8 out of 5</span> based on 2000+ reviews</p>
           </div>
-          <img class="intro__img" src="img/webp/intro.webp" alt="human eats fast-food">
+          <div class="intro__img"><img src="img/webp/intro.webp" alt="human eats fast-food"></div>
+        </div>
+      </section>
+      <section class="learn twocols" id="learn">
+        <div class="learn__bg"></div>
+        <div class="twocols__wrap container">
+          <div class="twocols__content learn__content">
+            <h2 class="learn__title twocols__title title">The home of fresh products</h2>
+            <p class="twocols__text text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+            <a href="" class="btn twocols__btn">Learn about us</a>
+          </div>
+          <div class="twocols__img">
+            <img src="img/webp/learn.webp" alt="">
+          </div>
+        </div>
+      </section>
+      <section class="how">
+        <div class="container">
+          <h2 class="how__title title">How it works.</h2>
+          <div class="how__items">
+            <div class="how__item">
+              <img src="img/webp/how-1.webp" alt="Adapt items">
+              <div class="">
+                <h3>Adapt your menu items</h3>
+                <p class="text">Easily adapt your menu using the webflow CMS and allow customers to browse your items.</p>
+              </div>
+            </div>
+            <div class="how__item">
+              <img src="img/webp/how-2.webp" alt="Accept orders">
+              <div class="">
+                <h3>Accept online orders & takeout</h3>
+                <p class="text">Let your customers order and pay via the powerful ecommerce system, or simple let them call your store.</p>
+              </div>
+            </div>
+            <div class="how__item">
+              <img src="img/webp/how-3.webp" alt="Manage delivery">
+              <div class="">
+                <h3>Manage delivery or takeout</h3>
+                <p class="text">Manage your own logistics and take orders simply through the ecommerce system.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="browse">
+        <div class="container">
+          <h2 class="browse__title title">Browse our menu</h2>
+          <p class="browse__text text">Use our menu to place an order online, or <span>phone</span> our store to place a pickup order. Fast and fresh food.</p>
+          <div class="browse__buttons">
+            <button class="browse__btn btn">Burgers</button>
+            <button class="browse__btn btn">Sides</button>
+            <button class="browse__btn btn">Drinks</button>
+          </div>
+          <div class="browse__list">
+            <div class="browse__card card">
+              <img src="img/webp/burger-1.webp" alt="">
+              <h3 class="card__title">Burger Dreams</h3>
+              <p class="card__price">$ 9.20 USD</p>
+              <p class="text card__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              
+            </div>
+          </div>
         </div>
       </section>
     </main>
