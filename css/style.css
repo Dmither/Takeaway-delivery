@@ -8,6 +8,13 @@
   --color-bg: rgba(53, 184, 190, 0.1);
 }
 
+.anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
+
 .wrapper {
   color: var(--text);
   font-family: "Inter";
