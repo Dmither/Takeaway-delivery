@@ -13,8 +13,6 @@
 .wrapper{
   color: var(--text);
   font-family: 'Inter';
-  position: relative;
-  overflow: hidden;
 }
 .container{
   max-width: 100%;
@@ -79,36 +77,35 @@
     }
   }
 }
-.header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  &__order {
-    display: none;
-    @media (min-width: 768px) {
-      display: block;
-      font-size: 14px;
-      line-height: 1.43;
-      background-color: var(--color);
-      p{
-        color: var(--reverse);
-        opacity: 0.8;
-      }
-      a{
-        color: var(--reverse);
-        opacity: 1;
-      }
-      
+.header-order {
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+    font-size: 14px;
+    line-height: 1.43;
+    background-color: var(--color);
+    p{
+      color: var(--reverse);
+      opacity: 0.8;
+    }
+    a{
+      color: var(--reverse);
+      opacity: 1;
     }
   }
-  &__order-container{
+  &__container{
     padding: 14px 0;
     gap: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+}
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 2;
   &__main {
     padding: 8px 0;
     background-color: var(--reverse);
