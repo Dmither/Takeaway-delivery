@@ -11,6 +11,7 @@
 html, body {
   color: var(--text);
   font-family: "Inter";
+  scroll-behavior: smooth;
 }
 
 .freeze {
