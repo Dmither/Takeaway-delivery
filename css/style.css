@@ -936,7 +936,7 @@ html, body {
 .support__title {
   font-size: 32px;
   line-height: 1.14;
-  letter-spacing: 1.65;
+  letter-spacing: 1.65px;
   color: var(--reverse);
 }
 .support__title span {
@@ -1007,12 +1007,25 @@ html, body {
   background-color: #F5FBFC;
 }
 .footer__top {
-  padding: 100px 0 118px;
+  padding: 30px 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
 }
-.footer__logo {
-  margin-bottom: 28px;
+@media (min-width: 768px) {
+  .footer__top {
+    padding: 100px 0 118px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .footer__main {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+@media (min-width: 767px) {
+  .footer__logo {
+    margin-bottom: 28px;
+  }
 }
 .footer__text {
   font-size: 16px;
@@ -1022,8 +1035,8 @@ html, body {
 }
 .footer__nav {
   display: grid;
-  grid-template-columns: repeat(3, 180px);
   gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
 }
 .footer__cat {
   font-size: 13px;
@@ -1031,27 +1044,66 @@ html, body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #08090A;
-  margin-bottom: 23px;
+  margin-bottom: 12px;
+}
+@media (min-width: 767px) {
+  .footer__cat {
+    margin-bottom: 23px;
+  }
 }
 .footer__list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+}
+@media (max-width: 767px) {
+  .footer__list {
+    gap: 2px;
+  }
+}
+@media (min-width: 768px) {
+  .footer__list {
+    gap: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .footer__list {
+    gap: 18px;
+  }
 }
 .footer__link {
+  display: block;
+  padding: 10px 0;
   font-size: 15px;
-  line-height: 2;
+  line-height: 1;
   color: #546285;
 }
 .footer__link:hover, .footer__link:focus {
   box-shadow: 0 0 5px var(--color);
 }
 .footer__bot {
-  padding: 60px 0;
   border-top: 1px solid rgba(126, 130, 143, 0.0901960784);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .footer__bot {
+    padding: 20px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .footer__bot {
+    padding: 40px 0;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 992px) {
+  .footer__bot {
+    padding: 60px 0;
+    justify-content: space-between;
+  }
 }
 .footer__info {
   font-size: 15px;

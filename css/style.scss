@@ -780,7 +780,7 @@ html, body{
   &__title {
     font-size: 32px;
     line-height: 1.14;
-    letter-spacing: 1.65;
+    letter-spacing: 1.65px;
     color: var(--reverse);
     span{color: #1B9097;}
   }
@@ -841,17 +841,24 @@ html, body{
 }
 .footer {
   background-color: #F5FBFC;
-  &__container {
-  }
   &__top {
-    padding: 100px 0 118px;
+    padding: 30px 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    @media (min-width: 768px) {
+      padding: 100px 0 118px;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   &__main {
+    @media (max-width: 767px) {
+      margin-bottom: 15px;
+      text-align: center;
+    }
   }
   &__logo {
-    margin-bottom: 28px;
+    @media (min-width: 767px) {
+      margin-bottom: 28px;
+    }
   }
   &__text {
     font-size: 16px;
@@ -861,8 +868,8 @@ html, body{
   }
   &__nav {
     display: grid;
-    grid-template-columns: repeat(3, 180px);
     gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
   }
   &__cat {
     font-size: 13px;
@@ -870,27 +877,52 @@ html, body{
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #08090A;
-    margin-bottom: 23px;
+    margin-bottom: 12px;
+    @media (min-width: 767px) {
+      margin-bottom: 23px;
+    }
   }
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    @media (max-width: 767px) {
+      gap: 2px;
+    }
+    @media (min-width: 768px){
+      gap: 10px;
+    }
+    @media (min-width: 992px){
+      gap: 18px;
+    }
   }
   &__link {
+    display: block;
+    padding: 10px 0;
     font-size: 15px;
-    line-height: 2;
+    line-height: 1;
     color: #546285;
     &:hover, &:focus{
       box-shadow: 0 0 5px var(--color);
     }
   }
   &__bot {
-    padding: 60px 0;
     border-top: 1px solid #7E828F17;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    @media (max-width: 767px) {
+      padding: 20px;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @media (min-width: 768px){
+      padding: 40px 0;
+      justify-content: space-between;
+    }
+    @media (min-width: 992px){
+      padding: 60px 0;
+      justify-content: space-between;
+    }
   }
   &__info {
     font-size: 15px;
